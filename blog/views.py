@@ -5,7 +5,7 @@ from django.http import HttpResponse
 news = [
     {
     'title': 'Наша первая запись',
-    'text': 'Текст до первой записи',
+    'text': 'Текст для первой записи',
     'date': '03.01.18',
     'avtor': 'Георгий'
     },
@@ -19,11 +19,11 @@ news = [
 ]
 
 def home(request):
-    date = {
+    data = {
         'news': news,
         'title': 'Главная страница блога'
     }
-    return render(request, 'blog/home.html')
+    return render(request, 'blog/home.html', data)
 
 def contact(request):
-    return render(request, 'blog/contact.html')
+    return render(request, 'blog/contact.html', {'title': 'Страничка про нас'})
