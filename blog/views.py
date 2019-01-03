@@ -6,4 +6,4 @@ def home(request):
     return render(request, 'blog/home.html')
 
 def contact(request):
-    return HttpResponse('<h2>Страница с контактами</h2>')
+    return render(request, 'blog/contact.html')
