@@ -9,8 +9,8 @@
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a class="navbar-brand" href="#">itProger news</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><b>Tech news</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,17 +18,33 @@
     <div class="collapse navbar-collapse" id="navbarsExample09">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Главная</a>
+          <a class="nav-link" href="/">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Про нас</a>
-        </li>  
+          <a class="nav-link" href="/contact">Про нас</a>
+        </li>
       </ul>
     </div>
   </nav>
-  <div class="container">
-    {% block main_section %}
-    {% endblock %}
-  </div>
+  <main class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block main_section %}
+        {% endblock %}
+      </div>
+
+      <aside class="col-md-4">
+        <div class="bg-info p-3 mb-3 rounded">
+          <h3><b>Интиресные статьи</b></h3>
+          <p>Программное обеспечение от Samsung представлено обновленным пользовательским интерфейсом TouchWiz, службой Social Hub и кросс-платформенным сервисом для общения ChatON, позволяющим общаться с друзьями вне зависимости от типов используемых ими смартфонов. ChatON обеспечивает обмен мгновенными сообщениями, поддерживает групповые чаты и обмен данными, а Social Hub объединяет аккаунты пользователя в социальных сетях, почтовых службах, сервисах общения в одном интерфейсе.
+          </p>
+        </div>
+
+        <div class="p-3 mb-3">
+          <img src="side001.jpg" class="img-thumbnail">
+        </div>
+      </aside>
+    </div>
+  </main>
 </body>
 </html>
