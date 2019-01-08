@@ -1,19 +1,11 @@
 {% extends 'blog/main.html' %}
-{% load crispy_forms_tags %}
 {% block main_section %}
   <div class="form-section">
-    <h2>Регистрация на сайте</h2>
-    <form method="POST">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button type="submit" class="btn btn-outline-warning">Зарегистрироваться</button>
-    </form>
-    <hr>
-    Уже зарегистрированы? <a href="{% url 'user' %}">Войти в личный кабинет</a>
+    <h2>{{ user.username }}</h2>
   </div>
-  {% endblock main_section %}
+{% endblock main_section %}
 
-  {% block aside_news_section %}
+{% block aside_news_section %}
     <h3><b>Описание</b></h3>
     <p>Схемы обучения. Выбираете роль и проходите свой путь обучения конкретно для этой цели. В конце можно пройти сертификацию. Примеры ролей: разработчик Windows, бизнес-аналитик, архитектор решений Azure.
 
@@ -23,4 +15,4 @@
     <a href="" target="_blank">
       <button class="btn btn-warning">Посмотреть</button>
     </a>
-  {% endblock aside_news_section %}
+{% endblock aside_news_section %}
