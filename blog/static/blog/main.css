@@ -5,6 +5,17 @@ body {
   border-color: #fffaf0
 }
 
+footer {
+  padding: 30px;
+  background: #333a41;
+  color: #f1efef;
+  float: left;
+  width: 100%;
+}
+
+footer a {color: #788c9e}
+footer a:hover {color: #79b0e2}
+
 .user_image {
   width: 64px;
   height: 64px;
