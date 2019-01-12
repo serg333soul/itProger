@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import News
 from django.views.generic import ListView, DetailView, CreateView
 
@@ -17,7 +17,7 @@ class ShowNewsView(ListView):
 
     def get_context_data(self, **kwards):
         ctx = super(ShowNewsView, self).get_context_data(**kwards)
-        ctx['title'] = 'Главная страница блога'
+        ctx['title'] = 'Главная страница'
         return ctx
 
 class NewsDetailView(DetailView):
