@@ -7,7 +7,7 @@
     <div class="row">
       <div>
         {% if object.author.profile.img %}
-          <img src="{{ post.author.profile.img.url }}" alt="{{ object.author }}" class="user_image">
+          <img src="{{ object.author.profile.img.url }}" alt="{{ object.author }}" class="user_image">
         {% else %}
           <img src="/images/default.jpg" alt="{{ object.author }}" class="user_image">
         {% endif %}
@@ -17,6 +17,11 @@
         <p><b>Автор:</b> <mark>{{object.author}}</mark></p>
       </div>
     </div>
+    <hr>
+    {% if object.author == user %}
+      <a href="{% url 'news-update' object.id %}" class="btn btn-info">Обновить статью</a>
+      <a href="{% url 'news-delete' object.id %}" class="btn btn-danger">Удалить статью</a>
+    {% endif %}
   </div>
 {% endblock main_section %}
 

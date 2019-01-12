@@ -1,0 +1,23 @@
+{% extends 'blog/main.html' %}
+{% block main_section %}
+  <div class="form-section">
+    <h2>Вы точно хотите удалить статью: "{{ object.title }}"</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-danger">Да удалить</button>
+      <a href="{% url 'news-detail' object.id %}">Нет, отмена</a>
+    </form>
+  </div>
+{% endblock main_section %}
+
+{% block aside_news_section %}
+    <h3><b>Описание</b></h3>
+    <p>Схемы обучения. Выбираете роль и проходите свой путь обучения конкретно для этой цели. В конце можно пройти сертификацию. Примеры ролей: разработчик Windows, бизнес-аналитик, архитектор решений Azure.
+
+  Практическое обучение. В этом пути вам предложат пошаговые интерактивные инструкции для решения прикладных задач. Можно тратить от 15 минут на модуль. Пример: создание чат-бота с помощью службы Azure Bot.
+
+  Продукт. Выбираете конкретный продукт Microsoft и проходите модули для того, чтобы научиться с ним работать. Пример: разработка под Windows.</p>
+    <a href="" target="_blank">
+      <button class="btn btn-warning">Посмотреть</button>
+    </a>
+{% endblock aside_news_section %}
