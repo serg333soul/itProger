@@ -1,7 +1,7 @@
 {% extends 'blog/main.html' %}
 {% block main_section %}
-  <h2>Все статьи от автора {{ view.kwargs.username }}</h2>
-  <h4>Количество: {{ page_obj.paginator.count }}</h4>
+  <span class="text-muted">Все статьи автора <b>{{ view.kwargs.username }}</b></span>
+  <p><span class="text-muted">Количество: <b>{{ page_obj.paginator.count }}</b></span></p>
   {% for post in news %}
     <div class="alert alert-light">
       <h1>{{ post.title }}</h1>
@@ -11,7 +11,7 @@
           {% if post.author.profile.img %}
             <img src="{{ post.author.profile.img.url }}" alt="{{ post.author }}" class="user_image">
           {% else %}
-            <img src="/images/default.jpg" alt="{{ post.author }}" class="user_image">
+            <img src="/images/info.jpg" alt="{{ post.author }}" class="user_image">
           {% endif %}
         </div>
         <div class="mt-2">
@@ -19,27 +19,27 @@
           <p><b>Автор:</b> <a href="{% url 'user-news' post.author %}">{{post.author}}</a></p>
         </div>
       </div>
-      <a href="{% url 'news-detail' post.id %}" class="btn btn-outline-warning">Читать</a>
+      <a href="{% url 'news-detail' post.id %}" class="btn btn-outline-info"><u><b>Читать</b></u></a>
     </div>
   {% endfor %}
 
   {% if is_paginated %}
     {% if page_obj.has_previous %}
-      <a href="?page=1" class="btn btn-outline-warning">Начало</a>
-      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-warning">Предыдущая</a>
+      <a href="?page=1" class="btn btn-outline-info">Начало</a>
+      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info">Предыдущая</a>
     {% endif %}
 
     {% for num in page_obj.paginator.page_range %}
       {% if num == page_obj.number %}
-        <button class="btn btn-warning">{{ num }}</button>
+        <button class="btn btn-info"><u>{{ num }}</u></button>
       {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a href="?page={{ num }}" class="btn btn-outline-warning">{{ num }}</a>
+        <a href="?page={{ num }}" class="btn btn-outline-info">{{ num }}</a>
       {% endif %}
     {% endfor %}
 
     {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-warning">Следующая</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-warning">Последняя</a>
+      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info">Следующая</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info">Последняя</a>
     {% endif %}
   {% endif %}
 {% endblock main_section %}
@@ -48,6 +48,6 @@
   <h3><b>Советы и инструкции</b></h3>
   <p>Описание: О фильме: Джордж Бейли, владелец небольшой страховой компании, честный, отзывчивый, любящий муж и отец, подавлен свалившимися на него невзгодами и подумывает о самоубийстве. Очевидно, что человек, отказывающийся от самого большого дара Бога - жизни - нуждается в помощи ангела-хранителя. И Небеса отправляют ему на выручку Кларенса, единственного свободного на тот момент Ангела Второго Класса...</p>
   <a href="" target="_blank">
-    <button class="btn btn-warning">Посмотреть</button>
+    <button class="btn btn-info">Посмотреть</button>
   </a>
 {% endblock aside_news_section %}

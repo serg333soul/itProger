@@ -3,7 +3,7 @@
   <div class="alert alert-light">
     <a href="{% url 'blog-home' %}">На главную</a>
     <h1>{{ object.title }}</h1>
-    <p>{{ object.text|safe }}</p>
+      <p>{{ object.text|safe }}</p>
     <div class="row">
       <div>
         {% if object.author.profile.img %}

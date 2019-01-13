@@ -18,27 +18,27 @@
           <p><b>Автор:</b> <a href="{% url 'user-news' post.author %}">{{post.author}}</a></p>
         </div>
       </div>
-      <a href="{% url 'news-detail' post.id %}" class="btn btn-outline-warning">Читать</a>
+      <a href="{% url 'news-detail' post.id %}" class="btn btn-primary btn-sm pull-left"><u><b>Читать>></b></u></a>
     </div>
   {% endfor %}
 
   {% if is_paginated %}
     {% if page_obj.has_previous %}
-      <a href="?page=1" class="btn btn-outline-warning">Начало</a>
-      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-warning">Предыдущая</a>
+      <a href="?page=1" class="btn btn-outline-info">Начало</a>
+      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info">Предыдущая</a>
     {% endif %}
 
     {% for num in page_obj.paginator.page_range %}
       {% if num == page_obj.number %}
-        <button class="btn btn-warning">{{ num }}</button>
+        <button class="btn btn-info">{{ num }}</button>
       {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a href="?page={{ num }}" class="btn btn-outline-warning">{{ num }}</a>
+        <a href="?page={{ num }}" class="btn btn-outline-info">{{ num }}</a>
       {% endif %}
     {% endfor %}
 
     {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-warning">Следующая</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-warning">Последняя</a>
+      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info">Следующая</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info">Последняя</a>
     {% endif %}
   {% endif %}
 {% endblock main_section %}
@@ -47,6 +47,6 @@
   <h3><b>Советы и инструкции</b></h3>
   <p>Описание: О фильме: Джордж Бейли, владелец небольшой страховой компании, честный, отзывчивый, любящий муж и отец, подавлен свалившимися на него невзгодами и подумывает о самоубийстве. Очевидно, что человек, отказывающийся от самого большого дара Бога - жизни - нуждается в помощи ангела-хранителя. И Небеса отправляют ему на выручку Кларенса, единственного свободного на тот момент Ангела Второго Класса...</p>
   <a href="" target="_blank">
-    <button class="btn btn-warning">Посмотреть</button>
+    <button class="btn btn-info">Посмотреть</button>
   </a>
 {% endblock aside_news_section %}
