@@ -1,6 +1,15 @@
 body {
-  background: #ffffff
+  background: #fffafa
 }
+
+navbar {
+  background: #ffd700
+}
+
+img {
+  max-width: 100%!important;
+}
+
 .alert-light {
   border-color: #fffaf0
 }
@@ -11,6 +20,7 @@ footer {
   color: #f1efef;
   float: left;
   width: 100%;
+  margin-top: 50px;
 }
 
 footer a {color: #788c9e}
@@ -25,7 +35,7 @@ footer a:hover {color: #79b0e2}
 }
 
 .form-section {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
   border: 1px solid silver;
   box-sizing: border-box;
