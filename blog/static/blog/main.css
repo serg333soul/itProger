@@ -1,3 +1,15 @@
+h1 {
+  font-style: italic;
+  color: #5E606C;
+}
+
+p {
+  color: #5E606C;
+  font-family: "book antiqua", Georgia, Serif;
+  font-weight: bold;
+  font-size: large;
+}
+
 body {
   background: #ffffff
 }
@@ -11,11 +23,11 @@ img {
 }
 
 .alert-light {
-  border-color: #fffaf0
+  border-color: #dcdcdc
 }
 
 footer {
-  padding: 30px;
+  padding: 50px;
   background: #333a41;
   color: #f1efef;
   float: left;

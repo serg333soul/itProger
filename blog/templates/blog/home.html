@@ -24,21 +24,21 @@
 
   {% if is_paginated %}
     {% if page_obj.has_previous %}
-      <a href="?page=1" class="btn btn-outline-info">Начало</a>
-      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info">Предыдущая</a>
+      <a href="?page=1" class="btn btn-outline-default"><b>Начало</b></a>
+      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-default"><b>Предыдущая</b></a>
     {% endif %}
 
     {% for num in page_obj.paginator.page_range %}
       {% if num == page_obj.number %}
-        <button class="btn btn-info">{{ num }}</button>
+        <button class="btn btn-default"><u>{{ num }}</u></button>
       {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a href="?page={{ num }}" class="btn btn-outline-info">{{ num }}</a>
+        <a href="?page={{ num }}" class="btn btn-outline-default">{{ num }}</a>
       {% endif %}
     {% endfor %}
 
     {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info">Следующая</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info">Последняя</a>
+      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-default"><b>Следующая</b></a>
+      <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-default"><b>Последняя</b></a>
     {% endif %}
   {% endif %}
 {% endblock main_section %}
@@ -47,6 +47,6 @@
   <h3><b>Советы и инструкции</b></h3>
   <p>Описание: О фильме: Джордж Бейли, владелец небольшой страховой компании, честный, отзывчивый, любящий муж и отец, подавлен свалившимися на него невзгодами и подумывает о самоубийстве. Очевидно, что человек, отказывающийся от самого большого дара Бога - жизни - нуждается в помощи ангела-хранителя. И Небеса отправляют ему на выручку Кларенса, единственного свободного на тот момент Ангела Второго Класса...</p>
   <a href="" target="_blank">
-    <button class="btn btn-info">Посмотреть</button>
+    <button class="btn btn-default">Посмотреть</button>
   </a>
 {% endblock aside_news_section %}
