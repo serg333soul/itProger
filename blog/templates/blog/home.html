@@ -3,8 +3,8 @@
 {% block main_section %}
   {% for post in news %}
     <div class="alert alert-light">
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.text|striptags|truncatechars:200 }}</p>
+      <h1><a href="{% url 'news-detail' post.id %}" class="post__title_link">{{ post.title }}</a></h1>
+      <p>{{ post.text|striptags|truncatechars:300 }}</p>
       <div class="row">
         <div>
           {% if post.author.profile.img %}
@@ -18,7 +18,7 @@
           <p><b>Автор:</b> <a href="{% url 'user-news' post.author %}">{{post.author}}</a></p>
         </div>
       </div>
-      <a href="{% url 'news-detail' post.id %}" class="btn btn-primary btn-sm pull-left"><u><b>Читать>></b></u></a>
+      <a href="{% url 'news-detail' post.id %}" class="btn btn-outline-info"><u><b>Читать>></b></u></a>
     </div>
   {% endfor %}
 
